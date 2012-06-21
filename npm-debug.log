@@ -1,0 +1,42 @@
+info it worked if it ends with ok
+verbose cli [ 'node', '/usr/local/bin/npm', 'install', 'node-torrent' ]
+info using npm@1.1.21
+info using node@v0.6.17
+verbose config file /Users/sookcha/.npmrc
+verbose config file /usr/local/etc/npmrc
+verbose config file /usr/local/lib/node_modules/npm/npmrc
+verbose caching /Users/sookcha/Desktop/Dev/Dragre/node_modules/socket.io/package.json
+verbose cache add [ 'node-torrent', null ]
+silly cache add: name, spec, args [ undefined, 'node-torrent', [ 'node-torrent', null ] ]
+verbose parsed url { pathname: 'node-torrent',
+verbose parsed url   path: 'node-torrent',
+verbose parsed url   href: 'node-torrent' }
+verbose addNamed [ 'node-torrent', '' ]
+verbose addNamed [ null, '' ]
+silly name, range, hasData [ 'node-torrent', '', false ]
+verbose raw, before any munging node-torrent
+verbose url resolving [ 'https://registry.npmjs.org/', './node-torrent' ]
+verbose url resolved https://registry.npmjs.org/node-torrent
+http GET https://registry.npmjs.org/node-torrent
+http 404 https://registry.npmjs.org/node-torrent
+silly get cb [ 404,
+silly get cb   { server: 'CouchDB/1.2.0 (Erlang OTP/R15B)',
+silly get cb     date: 'Wed, 23 May 2012 09:12:07 GMT',
+silly get cb     'content-type': 'application/json',
+silly get cb     'content-length': '52',
+silly get cb     'cache-control': 'must-revalidate' } ]
+ERR! 404 'node-torrent' is not in the npm registry.
+ERR! 404 You should bug the author to publish it
+ERR! 404 Maybe try 'npm search torrent'
+ERR! 404 Note that you can also install from a
+ERR! 404 tarball, folder, or http url, or git url.
+ERR! 
+ERR! System Darwin 11.4.0
+ERR! command "node" "/usr/local/bin/npm" "install" "node-torrent"
+ERR! cwd /Users/sookcha/Desktop/Dev/Dragre
+ERR! node -v v0.6.17
+ERR! npm -v 1.1.21
+ERR! code E404
+ERR! message 404 Not Found: node-torrent
+ERR! errno {}
+verbose exit [ 1, true ]

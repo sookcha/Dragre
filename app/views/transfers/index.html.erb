@@ -1,0 +1,86 @@
+<html>
+<head>
+<script>
+  var socketUri = 'ws://' + document.location.host + '/socket';
+  var socket = new WebSocket(socketUri);
+
+  function starting() {
+	
+	function log(msg) { document.getElementById('log').innerHTML += msg + '<br>'; }
+	value = document.getElementById('fileNametoSave').value
+	socket.send(value)
+	
+	//WebSocket
+	setInterval(refreshData,1000);
+
+	function refreshData() {
+  		socket.send("refreshData")
+	};
+	socket.onopen = function(event) {
+  		log('소켓 오픈')
+	};
+	socket.onclose = function(event) {
+  		log('연결닫힘. error:'+event.reason)
+	};
+	socket.onerror = function(event) {
+  		log('오류')
+	};
+	socket.onmessage = function(event) {
+		if (event.data.indexOf("%") !=-1 ){
+			document.getElementById('percent').innerHTML = event.data + "<br>"
+	  		document.getElementById('bar').style.width = event.data
+		};
+		if (event.data.indexOf("Peers") !=-1){
+			document.getElementById('peers').innerHTML = event.data
+		};
+	}
+  }
+
+  function init() {
+    function log(msg) { document.getElementById('log').innerHTML += msg + '<br>'; }
+
+	//WebSocket
+	setInterval(refreshData,1000);
+
+	function refreshData() {
+  		socket.send('refreshData')
+	};
+	socket.onopen = function(event) {
+  		log('소켓 오픈')
+  		socket.send("hello world.")
+	};
+	socket.onclose = function(event) {
+  		log('연결닫힘. error:'+event.reason)
+	};
+	socket.onerror = function(event) {
+  		log('오류')
+	};
+	socket.onmessage = function(event) {
+		if (event.data.indexOf("%") !=-1 ){
+			document.getElementById('percent').innerHTML = event.data
+	  		document.getElementById('bar').style.width = event.data
+		};
+		if (event.data.indexOf("Peers") !=-1){
+			document.getElementById('peers').innerHTML = event.data
+		};
+	}
+}
+</script>
+</head>
+<body>
+  <h1>Torrent Download</h1>
+  저장할 파일 이름(확장자 포함) : <input type="text" name="fileNametoSave" id="fileNametoSave" />
+  <input type="submit" value="다운로드 시작!" id="startButton" onClick="starting();" />
+  <h1>Now Downloading : <%= @fn + "." + @ex %></h1>
+  <input type="button" value="Refresh" id="refreshButton">
+<div class="progress progress-striped
+     active progress-warning">
+  <div id="bar" class="bar"
+       style="width: 0%;"></div>
+</div>
+
+<p id='log'></p>
+<p id='percent'></p>
+<p id='peers'></p>
+</body>
+</html>

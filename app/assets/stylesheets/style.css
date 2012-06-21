@@ -1,0 +1,61 @@
+/*
+	Default CSS File
+	Written by Son Ho Sung
+*/
+
+::-moz-selection { background: #F0F7EB; color: #A0D4B8; text-shadow: none; }
+::selection { background: #F0F7EB; color: #A0D4B8; text-shadow: none; }
+a
+{
+  color: #000;
+}
+td > a {
+  color: #63A69F;
+  text-decoration: none;
+  line-height: 1.5;
+}
+p > a:hover
+{
+  color: #1aa871;
+  text-decoration: underline;
+}
+a:hover {
+  color: #1aa871;
+  text-decoration: none;
+}
+
+div
+{
+	margin-top:30px;
+	margin-left:30px;
+	margin-right:30px;
+}
+table, th, td
+{
+  text-align: center;
+  margin: 0px 0px;
+  width: 100%;
+  border-collapse:collapse;
+  border:1px solid #999;
+  font-size: 17px;
+  font-family: 'NanumMyeongjoEB';
+  -webkit-font-smoothing: antialiased;
+}
+
+body
+{
+  font-family: 'RobotoRegular', 'Helvetica Neue', 'Apple SD Gothic Neo', AppleSDGothicNeo, 'Malgun Gothic', sans-serif;
+  -webkit-font-smoothing: antialiased;
+	color: #545D61;
+	background-color: #F2F2F2;
+	text-shadow: #ffffff 0px 1px -1px;
+}
+table
+{
+}
+
+.hover {
+  background-color: #fff;
+  color: #000;
+  
+}

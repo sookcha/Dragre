@@ -1,0 +1,20 @@
+@font-face {
+	font-family: "NanumMyeongjoEB";
+	src: url('/NMUEB.woff') format('woff');
+	font-style: normal;
+	font-weight: bold;
+}
+
+@font-face {
+	font-family: "/RobotoRegular";
+	src: url('roboto-regular.woff') format('woff');
+	font-style: normal;
+	font-weight: normal;
+}
+
+@font-face {
+	font-family: "RobotoBold";
+	src: url('/roboto-bold.woff') format('woff');
+	font-style: normal;
+	font-weight: normal;
+}

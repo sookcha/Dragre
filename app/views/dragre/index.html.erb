@@ -1,0 +1,22 @@
+<h1>Dragre</h1>
+<p><a href="/upload" class="uploadbutton">Upload</a></p>
+<table>
+		<th>Name</th>
+		<th>Format</th>
+		<th>Size</th>
+		<th>Etc.</th>
+<% @dirs.each do |dir| %>
+	<tr>
+		<td><a href="<%= request.url+"/"+File.basename(dir) %>"><%= File.basename(dir) %></a></td>
+		<td>Folder</td>
+	</tr>
+<% end %>
+<% @files.each do |file| %>
+		<tr>
+		<td><a href="<%= "/files" + request.path + "/" + File.basename(file) %>"><%= File.basename(file)  %></a></td>
+		<td>File</td>
+		<td><%= File.size(file)/@mb %>MB</td>
+		<td><a href="<%= "/transfers/"+ File.basename(file) %>">Torrent</a></td>
+	</tr>
+<% end %>
+</table>

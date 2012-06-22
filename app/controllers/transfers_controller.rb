@@ -1,5 +1,4 @@
 # encoding: utf-8
-require 'devkit'
 
 require 'rack/websocket'
 require "rubytorrent-allspice"

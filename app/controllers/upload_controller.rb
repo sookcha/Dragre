@@ -1,5 +1,3 @@
-require 'devkit'
-
 class UploadController < ApplicationController
   def index
     

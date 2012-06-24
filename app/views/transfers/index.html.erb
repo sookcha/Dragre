@@ -5,7 +5,6 @@
   var socket = new WebSocket(socketUri);
 
   function starting() {
-	
 	function log(msg) { document.getElementById('log').innerHTML += msg + '<br>'; }
 	value = document.getElementById('fileNametoSave').value
 	socket.send(value)

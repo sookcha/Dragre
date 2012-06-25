@@ -14,9 +14,10 @@ end
 
 Dragre::Application.routes.draw do
   
-  get "dashboard/index"
+  get "client_upload/index"
   
   match '/dashboard' => 'dashboard#index'
+  
   match '/transfers/:fileName.:ex' => 'transfers#index'
   match '/upload' => 'upload#index'
   mount SocketApp.new => "/socket"
@@ -30,7 +31,7 @@ Dragre::Application.routes.draw do
   
   root :to => "dragre#index"
   
-  match ':foldername' => 'dragre#index', :constraints => {:foldername => /.*/}, :except => [:transfers, ':upload']
+  match ':foldername' => 'dragre#index', :constraints => {:foldername => /.*/}, :except => [:transfers, 'upload/uploadFile']
   
   #get "dragre/index"
 

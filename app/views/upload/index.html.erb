@@ -1,4 +1,4 @@
-<h1>파일 업로드</h1>
+<h1>File Upload</h1>
 <%= form_tag({:action => 'uploadFile'}, :method => "post", :multipart => true) do %>
    <%= file_field_tag :file %>
    <%= submit_tag "Upload" %>

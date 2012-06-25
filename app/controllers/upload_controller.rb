@@ -1,6 +1,6 @@
 class UploadController < ApplicationController
-  def index 
-    
+  def index
+
   end
   
   def uploadFile

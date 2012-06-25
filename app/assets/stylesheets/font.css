@@ -18,3 +18,15 @@
 	font-style: normal;
 	font-weight: normal;
 }
+@font-face {
+  font-family: "Lintel";
+  src: url('/Lintel.woff') format('woff');
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Novecentowide-Light";
+  src: url('/Novecentowide-Light.woff') format('woff');
+  font-style: normal;
+  font-weight: normal;
+}

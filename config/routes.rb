@@ -13,11 +13,28 @@ class SocketApp < Rack::WebSocket::Application
 end
 
 Dragre::Application.routes.draw do
+  get "users/edit"
+
+  get "users/index"
+
+  get "users/new"
+
+  resources :users
+
+  get "users/show"
+
+  resources :users
+  resources :sessions
   
+  get "signup" => "users#new", :as => "signup"
+  
+  get "users/new"
+
   get "client_upload/index"
   
   match '/dashboard' => 'dashboard#index'
-  
+  match '/login' => 'sessions#new'
+  match '/register' => 'users#new'
   match '/transfers/:fileName.:ex' => 'transfers#index'
   match '/upload' => 'upload#index'
   mount SocketApp.new => "/socket"
@@ -28,7 +45,6 @@ Dragre::Application.routes.draw do
   
   post "upload/file_upload"
   post "upload/uploadFile"
-  
   root :to => "dragre#index"
   
   match ':foldername' => 'dragre#index', :constraints => {:foldername => /.*/}, :except => [:transfers, 'upload/uploadFile']

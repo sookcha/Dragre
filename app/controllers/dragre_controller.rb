@@ -1,5 +1,8 @@
+require 'open-uri'
+
 class DragreController < ApplicationController
   def index
+    
     foldername = params[:foldername]
     uploaded_io = params[:file]
     if (uploaded_io != nil)
@@ -16,6 +19,6 @@ class DragreController < ApplicationController
       dir = 'public/files/' + foldername + '/*'
       @dirs = Dir.glob(dir).select {|f| File.directory? f}
       @files = Dir.glob(dir).select {|f| File.file? (f)} 
-    end
+    end    
   end
 end

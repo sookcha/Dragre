@@ -1,5 +1,24 @@
+<% if !current_user %>
+<%= link_to 'Log-in', '/login'%>
+<%= link_to 'Register', '/register'%>
+<% end %>
+<% if current_user %>
+<% if current_user.admin%>
+<%= link_to 'Logout', 'sessions/destroy', confirm: '정말로 로그아웃 할까요?', method: :delete %>
+<%= link_to '유저 관리', 'users' %>
+<%else%>
+<% end %>
+<%if !current_user.admin%>
+<%= link_to 'Logout', 'sessions/destroy', confirm: '정말로 로그아웃 할까요?', method: :delete %>
+<% end %>
+<% end %>
+
 <h1>Dragre</h1>
-<p><a href="/upload" class="uploadbutton">Upload</a></p>
+<% if current_user %>
+<% if current_user.admin%>
+	<p><a href="/upload" class="uploadbutton">Upload</a></p>
+<% end %>
+<% end %>
 <table>
 		<th>Name</th>
 		<th>Format</th>

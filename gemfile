@@ -27,7 +27,11 @@ gem 'faye'
 gem 'thin'
 gem 'websocket-rack'
 gem 'pry'
-gem 'eventmachine', ">= 1.0.0.beta.4", "<= 1.0.0.beta.4.1"
+if RUBY_PLATFORM =~ /win32/
+  gem "eventmachine", "~> 1.0.0.beta.4.1"
+else
+  gem "eventmachine", "~> 1.0.0.beta.4"
+end
 gem 'em-http-request'
 gem 'jquery-rails'
 gem 'bcrypt-ruby'

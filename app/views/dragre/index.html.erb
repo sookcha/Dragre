@@ -1,18 +1,18 @@
 <% if !current_user %>
 <%= link_to 'Log-in', '/login'%>
+/
 <%= link_to 'Register', '/register'%>
 <% end %>
 <% if current_user %>
 <% if current_user.admin%>
 <%= link_to 'Logout', 'sessions/destroy', confirm: '정말로 로그아웃 할까요?', method: :delete %>
 <%= link_to '유저 관리', 'users' %>
-<%else%>
+<% else %>
 <% end %>
 <%if !current_user.admin%>
 <%= link_to 'Logout', 'sessions/destroy', confirm: '정말로 로그아웃 할까요?', method: :delete %>
 <% end %>
 <% end %>
-
 <h1>Dragre</h1>
 <% if current_user %>
 <% if current_user.admin%>

@@ -166,7 +166,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   em-http-request
   em-websocket
-  eventmachine (>= 1.0.0.beta.4, <= 1.0.0.beta.4.1)
+  eventmachine (~> 1.0.0.beta.4)
   eventmachine_httpserver
   faye
   jquery-rails

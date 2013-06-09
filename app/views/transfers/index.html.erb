@@ -9,17 +9,18 @@
 	value = document.getElementById('fileNametoSave').value
 	socket.send(value)
 	
-	//WebSocket
+	// WebSocket
 	setInterval(refreshData,1000);
 
 	function refreshData() {
   		socket.send("refreshData")
 	};
+	
 	socket.onopen = function(event) {
   		log('소켓 오픈')
 	};
 	socket.onclose = function(event) {
-  		log('연결닫힘. error:'+event.reason)
+  		log('연결닫힘. error:'+ event.reason)
 	};
 	socket.onerror = function(event) {
   		log('오류')
@@ -38,7 +39,7 @@
   function init() {
     function log(msg) { document.getElementById('log').innerHTML += msg + '<br>'; }
 
-	//WebSocket
+	// WebSocket
 	setInterval(refreshData,1000);
 
 	function refreshData() {
@@ -59,9 +60,6 @@
 			document.getElementById('percent').innerHTML = event.data
 	  		document.getElementById('bar').style.width = event.data
 		};
-		if (event.data.indexOf("Peers") !=-1){
-			document.getElementById('peers').innerHTML = event.data
-		};
 	}
 }
 </script>
@@ -73,7 +71,7 @@
   <h1>Now Downloading : <%= @fn + "." + @ex %></h1>
   <input type="button" value="Refresh" id="refreshButton">
 <div class="progress progress-striped
-     active progress-warning">
+     active">
   <div id="bar" class="bar"
        style="width: 0%;"></div>
 </div>

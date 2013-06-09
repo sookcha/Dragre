@@ -10,6 +10,7 @@ class DragreController < ApplicationController
        file.write(uploaded_io.read)
      end
    end
+   
     @mb = 1024.0 * 1024.0
     if foldername == nil
       dir = 'public/files/*'
